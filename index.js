@@ -1,11 +1,13 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const app = express();
+const cors = require("cors")
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(cookieParser())
+app.use(cors())
 const suppliers = [
     {
         "id": 1,
