@@ -3,6 +3,7 @@ const cookieParser = require("cookie-parser");
 const app = express();
 const cors = require("cors")
 const bodyParser = require('body-parser');
+const PORT = 8080 || process.env.PORT
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
@@ -150,6 +151,6 @@ app.get("/suppliers/:id",(req,res)=>{
     res.send(suplier)
 })
 
-app.listen(8080,()=>{
+app.listen(PORT,()=>{
     console.log("Server running")
 })
